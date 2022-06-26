@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="System.Text.Json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="6.0.5" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CatFacts.Models\CatFacts.Models.csproj" />
+  </ItemGroup>
+</Project>
