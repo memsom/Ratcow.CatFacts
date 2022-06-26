@@ -132,5 +132,14 @@
       <Project>{B25CFDF5-1AD5-4644-AACD-0F6B22F149C2}</Project>
       <Name>CatFacts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\CatFacts.ViewModels\CatFacts.ViewModels.csproj">
+      <Name>CatFacts.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\CatFacts.Services\CatFacts.Services.csproj">
+      <Name>CatFacts.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\CatFacts.Models\CatFacts.Models.csproj">
+      <Name>CatFacts.Models</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

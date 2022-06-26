@@ -15,54 +15,13 @@ using Xamarin.Forms;
 
 namespace CatFacts.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    // this is necessary because the Xamarin Forms Command differs from the Maui one and this makes it possible to
+    // use a common base without that getting in the way.
+    public class MainPageViewModel : MainPageViewModelBase
     {
-        public MainPageViewModel(ICatFactsService catFactsService)
+        public MainPageViewModel(ICatFactsService catFactsService) : base(catFactsService)
         {
-            this.catFactsService = catFactsService ?? throw new ArgumentNullException(nameof(catFactsService));
-
             RefreshCommand = new Command(Refresh);
-
-            // get the initial fact...
-            Refresh(null);
-        }
-
-        string fact = "No fact, hit 'New'";
-        public string Fact
-        {
-            get => fact;
-            private set => SetField(ref fact, value);
-        }
-
-        string image = string.Empty;
-        public string Image
-        {
-            get => image;
-            private set => SetField(ref image, value);
-        }
-
-        public ICommand RefreshCommand { get; }
-
-        ICatFactsService catFactsService { get; }
-
-        public async void Refresh(object sender)
-        {
-
-            // get the fact
-            if(await catFactsService.GetFact() is CatFact fact)
-            {
-                Fact = fact.Fact;
-
-                // get an image if the fact resolved
-                if (await catFactsService.GetImage() is CatImage image)
-                {
-                    Image = image.Url;
-                }
-                else if (await catFactsService.GetAltImage() is CatImage alt)
-                {
-                    Image = alt.Url;
-                }
-            }
         }
     }
 }

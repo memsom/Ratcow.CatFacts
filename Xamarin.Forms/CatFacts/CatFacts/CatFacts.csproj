@@ -28,5 +28,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\CatFacts.Models\CatFacts.Models.csproj" />
     <ProjectReference Include="..\..\..\Common\CatFacts.Services\CatFacts.Services.csproj" />
+    <ProjectReference Include="..\..\..\Common\CatFacts.ViewModels\CatFacts.ViewModels.csproj" />
   </ItemGroup>
 </Project>
