@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CatFacts"
+             xmlns:viewmodels="clr-namespace:CatFacts.ViewModels"
+             x:Class="CatFacts.Views.MainPage"      
+             x:DataType="viewmodels:MainPageViewModel"
+             Title="MainPage">
+
+    <Grid Margin="10" RowDefinitions="1*, 2*,3*,1*" VerticalOptions="Fill" HorizontalOptions="Fill">
+        <Frame BackgroundColor="Black" Padding="0" HorizontalOptions="Center">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label TextColor="White" Text="Cat Facts" HorizontalTextAlignment="Center" FontSize="Title"/>
+                <Label TextColor="White" Margin="5" Text="A silly little test app to learn the basics of how Maui differs from Xamarin Forms" 
+                   FontAttributes="Italic" HorizontalOptions="CenterAndExpand" 
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            </StackLayout>
+            
+        </Frame>
+        <Frame Grid.Row="1" Margin="25,10"  Padding="3" BackgroundColor="Transparent" BorderColor="Gray">
+            <Image Margin="5" Grid.Row="0" Source="{Binding Image}" MaximumHeightRequest="200" />
+        </Frame>
+        <Label Margin="10" Grid.Row="2" Text="{Binding Fact}" FontSize="Large"
+               VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+        <Button Grid.Row="3" Text="New" Command="{Binding RefreshCommand}" 
+                HorizontalOptions="Fill" VerticalOptions="End"/>
+    </Grid>
+</ContentPage>
